@@ -63,19 +63,21 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
     <main className="p-4">
     
       <div
-        className="relative flex justify-center items-center"
+      className='w-full'
+        // className="relative flex justify-center items-center"
         style={{
           backgroundImage: `url(${isMobile ? mobShortImg.src : desShortImg.src})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          // backgroundPosition: 'center',
           height: 'auto',
+          width: '100%',
           backgroundColor: 'hsl(257, 27%, 26%)',
           borderRadius: '8px',
         }}
       >
         <form
           onSubmit={handleSubmit}
-          className="relative flex flex-col lg:flex-row items-center gap-3 p-6 rounded-lg shadow-md"
+          className="relative flex flex-col lg:flex-row items-center gap-3 p-3 rounded-lg shadow-md w-full"
         >
           <div>
             <input
@@ -83,7 +85,7 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
               value={txtValue}
               onChange={handleText}
               placeholder="Shorten link here..."
-              className="w-full max-w-md border text-GrayishViolet border-gray-400 rounded-md px-8 py-2 focus:outline-none"
+              className="w-full max-w-md border text-GrayishViolet border-gray-400 rounded-md px-11 py-2 focus:outline-none"
             />
             {errs && <span className="text-Red pr-[7.5rem]"><em>{errs}</em></span>}
           </div>
