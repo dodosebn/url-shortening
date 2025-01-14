@@ -60,7 +60,7 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
   };
 
   return (
-    <main className="p-4">
+    <main className="p-3">
     
       <div
       className='w-full'

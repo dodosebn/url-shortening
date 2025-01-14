@@ -1,16 +1,19 @@
 'use client';
-import { Header, Main } from "@/components";
+import { Header, Main, Illustration, AdvStat, Boost} from "@/components";
 import { useState } from "react";
-
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
 
   return (
-    <div className="font-Poppins" style={{ background: '#f0f1f6' }}>
-      {/* Common container for Header and Main with p-4 */}
-      <div className="p-4 max-w-screen-lg mx-auto">
+    <div className="font-Poppins bg-slate-50 " >
+      <div className="text-lg max-w-screen-lg mx-auto h-auto">
+        <section className="p-3">
         <Header isMobile={isMobile} setIsMobile={setIsMobile} />
+        <Illustration />
         <Main isMobile={isMobile} setIsMobile={setIsMobile} />
+      <AdvStat />
+      </section>
+      <Boost isMobile={isMobile}/>
       </div>
     </div>
   );
