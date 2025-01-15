@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { AdvStatTempProps } from '@/types';
 const AdvStatTemp:React.FC<AdvStatTempProps>= ({imgSrc, title, content}) => {
   return (
-    <div className='relative mt-5 lg:mt-0'>
+    <div className='relative'>
   <div className="bg-DarkViolet rounded-full w-24 h-24 flex items-center justify-center mx-auto absolute -top-12 left-0 right-0">
   <Image src={imgSrc} alt={title} className="mx-auto" />
 </div>

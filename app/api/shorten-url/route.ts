@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       },
     });
 
-    return NextResponse.json(response.data); // Return shortened URL to the client
+    return NextResponse.json(response.data);
   } catch (error: any) {
     console.error('Error in API route:', error.message);
     return NextResponse.json({ error: 'Failed to shorten URL' }, { status: 500 });

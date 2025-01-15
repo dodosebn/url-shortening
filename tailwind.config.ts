@@ -18,6 +18,8 @@ export default {
         GrayishViolet: 'hsl(257, 7%, 63%)',
         veryDarkBlue: 'hsl(255, 11%, 22%)',
         veryDarkViolet: 'hsl(260, 8%, 14%)',
+        footbg: '#212121',
+        foottxt: '#686669'
       },
       fontFamily: {
         Poppins: ['Poppins', 'Helvetica Neue', 'Arial', 'sans-serif'],

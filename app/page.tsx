@@ -1,5 +1,5 @@
 'use client';
-import { Header, Main, Illustration, AdvStat, Boost} from "@/components";
+import { Header, Main, Illustration, AdvStat, Boost, Foot}from "@/components";
 import { useState } from "react";
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -14,6 +14,7 @@ export default function Home() {
       <AdvStat />
       </section>
       <Boost isMobile={isMobile}/>
+      <Foot />
       </div>
     </div>
   );

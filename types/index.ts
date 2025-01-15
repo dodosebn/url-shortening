@@ -16,3 +16,17 @@ export interface AdvStatTempProps {
 export interface BoostProps {
   isMobile: boolean;
 }
+export interface footFirstItemProp {
+  id: number,
+  name: string
+}
+
+export interface fourthItemProp {
+  id: number,
+  imgSrc: any
+}
+export interface FooterItemProps {
+  itema : string,
+   title: string, 
+   itemaName: string
+}

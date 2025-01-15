@@ -5,7 +5,7 @@ import { DbBtn } from './customs';
 
 const Illustration: React.FC = () => {
   return (
-    <section className="p-3 mt-5 lg:mt-0 relative z-20 flex flex-col md:flex-row items-center overflow-x-hidden">
+    <section className="p-3 mt-5 lg:mt-0 flex flex-col md:flex-row items-center overflow-x-hidden">
       <div>
         <Image src={illusImg} alt="Illustration of someone working" className="bg-no-repeat bg-cover w-[44em] h-[12em] md:w-[50em]" />
       </div>
