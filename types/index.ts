@@ -26,7 +26,10 @@ export interface fourthItemProp {
   imgSrc: any
 }
 export interface FooterItemProps {
-  itema : string,
+  itemId : number,
    title: string, 
-   itemaName: string
+   itemName: string
+}
+export interface illuProps {
+  isMobile: boolean;
 }

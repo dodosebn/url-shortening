@@ -8,9 +8,9 @@ export default function Home() {
     <div className="font-Poppins bg-slate-50 " >
       <div className="text-lg max-w-screen-lg mx-auto h-auto">
         <section className="p-3">
-        <Header isMobile={isMobile} setIsMobile={setIsMobile} />
+        <Header isMobile={isMobile} setIsMobile={setIsMobile} pad="p-3"/>
         <Illustration/>
-        <Main isMobile={isMobile} setIsMobile={setIsMobile} />
+        <Main isMobile={isMobile} setIsMobile={setIsMobile} pad="p-3"/>
       <AdvStat />
       </section>
       <Boost isMobile={isMobile}/>
