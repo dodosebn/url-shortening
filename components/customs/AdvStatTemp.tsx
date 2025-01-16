@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import { AdvStatTempProps } from '@/types';
-const AdvStatTemp:React.FC<AdvStatTempProps>= ({imgSrc, title, content}) => {
+export  const AdvStatTemp:React.FC<AdvStatTempProps>= ({imgSrc, title, content}) => {
   return (
     <div className='relative'>
   <div className="bg-DarkViolet rounded-full w-24 h-24 flex items-center justify-center mx-auto absolute -top-12 left-0 right-0">
@@ -17,5 +17,9 @@ const AdvStatTemp:React.FC<AdvStatTempProps>= ({imgSrc, title, content}) => {
       </div>
   )
 }
+export const AdStatColorBtw = () => {
+  return (
+    <div className='border-l-[0.125rem] mx-auto border-solid border-cyan h-[7rem] w-[0.7rem] bg-cyan'></div>
+  )
+}
 
-export default AdvStatTemp;

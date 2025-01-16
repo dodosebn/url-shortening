@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdvStatTemp } from './customs';
+import { AdvStatTemp, AdStatColorBtw} from './customs';
 import Brand from '@/public/icon-brand-recognition.svg'; 
 import Records from '@/public/icon-detailed-records.svg';
 import Customiz from '@/public/icon-fully-customizable.svg';
@@ -15,7 +15,7 @@ const AdvStat: React.FC = () => {
           Track how your links are performing across the web with our advanced statistics dashboard.
         </p>
       </div>
-      <div className="mt-20 mx-4 flex flex-col lg:flex-row gap-[5rem]">
+      <div className="mt-20 mx-4 flex flex-col lg:flex-row gap-[0.1rem]">
         <div>
           <AdvStatTemp
             imgSrc={Brand}
@@ -23,6 +23,7 @@ const AdvStat: React.FC = () => {
             content="Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content."
           />
         </div>
+<AdStatColorBtw />
         <div>
           <AdvStatTemp
             imgSrc={Records}
@@ -30,6 +31,7 @@ const AdvStat: React.FC = () => {
             content="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
           />
         </div>
+        <AdStatColorBtw />
         <div>
           <AdvStatTemp
             imgSrc={Customiz}
@@ -37,6 +39,7 @@ const AdvStat: React.FC = () => {
             content="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."
           />
         </div>
+        
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export default function Home() {
       <div className="text-lg max-w-screen-lg mx-auto h-auto">
         <section className="p-3">
         <Header isMobile={isMobile} setIsMobile={setIsMobile} />
-        <Illustration />
+        <Illustration/>
         <Main isMobile={isMobile} setIsMobile={setIsMobile} />
       <AdvStat />
       </section>

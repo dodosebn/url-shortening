@@ -9,8 +9,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        // background: "var(--background)",
-        // foreground: "var(--foreground)",
         cyan: "hsl(180, 66%, 49%)",
         DarkViolet: "hsl(257, 27%, 26%)",
         Red: "hsl(0, 87%, 67%)",
@@ -22,7 +20,7 @@ export default {
         foottxt: '#686669'
       },
       fontFamily: {
-        Poppins: ['Poppins', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        Poppins: ['Poppins'],
       },
     },
   },

@@ -12,13 +12,13 @@ const Header: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
   const navBtns: NavBtnProps = ['Login', 'Sign Up'];
 
   return (
-    <header className="p-3 relative z-10">
+    <header className="p-3 relative z-10 ">
       <nav className="flex justify-between items-center p-4">
         <div>
-          <Image src={logo} alt="Logo" width={50} height={50} priority />
+          <Image src={logo} alt="Logo" priority className='text-2xl' />
         </div>
 
-        <ul className="hidden lg:flex lg:pr-[13rem] space-x-8 mx-auto lg:bg-slate-50 bg-DarkViolet">
+        <ul className="hidden lg:flex lg:pr-[13rem] space-x-8 mx-auto lg:bg-slate-50">
           {navItems.map((item: string, index: number) => (
             <li key={index} className="text-grayish-violet hover:text-black transition justify">
               <a href={`#${item.toLowerCase()}`}>{item}</a>
@@ -43,13 +43,14 @@ const Header: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
             onClick={() => setIsMobile(!isMobile)}
             aria-label="Toggle menu"
           >
-            <GiHamburgerMenu className={isMobile ? 'text-grayish-violet' : ''} />
+            <GiHamburgerMenu className={`${isMobile ? 'text-grayish-violet' : ''} text-2xl `} />
           </button>
         </div>
       </nav>
 
       {isMobile && (
-        <aside className="bg-DarkViolet text-white shadow-md py-8 font-semibold lg:hidden mx-auto rounded-lg flex flex-col items-center justify-center z-50">
+        <aside className={`bg-DarkViolet text-white text-lg shadow-md py-24 font-semibold lg:hidden mx-auto rounded-xl flex flex-col items-center justify-center z-50 absolute top-[6rem] left-0 w-full transition-transform ${
+            isMobile ? 'translate-x-0' : 'translate-x-full'}`}>
           <ul className="space-y-4 text-center">
             {navItems.map((item: string, index: number) => (
               <li key={index} className="text-grayish-violet hover:text-white transition">

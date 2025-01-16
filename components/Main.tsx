@@ -68,7 +68,6 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
         style={{
           backgroundImage: `url(${isMobile ? mobShortImg.src : desShortImg.src})`,
           backgroundSize: 'cover',
-          // backgroundPosition: 'center',
           height: 'auto',
           width: '100%',
           backgroundColor: 'hsl(257, 27%, 26%)',
@@ -85,13 +84,13 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
               value={txtValue}
               onChange={handleText}
               placeholder="Shorten link here..."
-              className="w-full max-w-md border text-GrayishViolet border-gray-400 rounded-md px-11 py-2 focus:outline-none"
+              className="w-full lg:w-[100rem] max-w-md border mx-auto text-GrayishViolet border-gray-400 rounded-md px-11 py-2 focus:outline-none"
             />
             {errs && <span className="text-Red pr-[7.5rem]"><em>{errs}</em></span>}
           </div>
           <button
             type="submit"
-            className="bg-cyan w-full max-w-md text-white rounded-lg px-8 py-2 transition"
+            className="bg-cyan w-full max-w-md hover:hover:opacity-75 text-white rounded-lg px-8 py-2 transition"
           >
             Shorten it!
           </button>
@@ -109,7 +108,7 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
                     href={urlData.original}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 underline hover:text-blue-700 transition px-8"
+                    className="text-blue-500 underline hover:text-blue-700 transition px-8 "
                   >
                     {urlData.original}
                   </a>
@@ -128,7 +127,7 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
                   {/* Copy Button */}
                   <button
                     onClick={() => handleCopy(urlData.shortened)}
-                    className="bg-cyan w-full max-w-md text-white rounded-lg px-8 py-2 transition"
+                    className="bg-cyan w-full max-w-md hover:hover:opacity-75 text-white rounded-lg px-8 py-2 transition"
                   >
                     Copy
                   </button>

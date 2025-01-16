@@ -1,4 +1,4 @@
-import AdvStatTemp from "./AdvStatTemp";
+import { AdvStatTemp, AdStatColorBtw } from "./AdvStatTemp";
 import DbBtn from "./DbBtn";
 import { firstItem,   secondItem,    thirdItem, fourthItem} from './FooterStuff';
 import FooterItem from "./FooterItem";
@@ -11,5 +11,6 @@ export {
     thirdItem,
     fourthItem,
 FooterItem,
-LogoForFooter
+LogoForFooter, 
+AdStatColorBtw
 }
