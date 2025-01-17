@@ -1,7 +1,8 @@
 'use client';
 import { Header, Main, Illustration, AdvStat, Boost, Foot } from "@/components";
 import { useState, useEffect } from "react";
-
+import { Suspense } from "react";
+import Loading from './loading';
 export default function Home() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -10,7 +11,7 @@ export default function Home() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    checkMobile(); // Check on mount
+    checkMobile(); 
     window.addEventListener("resize", checkMobile);
 
     return () => window.removeEventListener("resize", checkMobile);
@@ -22,7 +23,9 @@ export default function Home() {
         <section className="lg:px-[5rem] p-3">
           <Header isMobile={isMobile} setIsMobile={setIsMobile} />
           <Illustration />
+          <Suspense fallback={<Loading />} >
           <Main isMobile={isMobile} setIsMobile={setIsMobile} />
+          </Suspense>
           <AdvStat isMobile={isMobile} />
         </section>
         <Boost isMobile={isMobile} />

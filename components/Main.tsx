@@ -13,6 +13,7 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
   }[]>([]);
   const [errs, setErrs] = useState<string>("");
   const [copiedUrl, setCopiedUrl] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);  
 
   const handleText = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTxtValue(event.target.value);
@@ -39,6 +40,7 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
       return;
     }
 
+    setLoading(true);  
     try {
       const response = await fetch("/api/shorten-url", {
         method: "POST",
@@ -66,6 +68,8 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
     } catch (error) {
       console.error("Error in handleSubmit:", error);
       setErrs("An unexpected error occurred. Please try again later.");
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -74,7 +78,7 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
       .writeText(url)
       .then(() => {
         setCopiedUrl(url);
-        setTimeout(() => setCopiedUrl(null), 2000);
+        setTimeout(() => setCopiedUrl(null), 3000);
       })
       .catch(() => {
         alert("Failed to copy. Try again!");
@@ -117,9 +121,14 @@ const Main: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
 
           <button
             type="submit"
-            className="bg-cyan hover:bg-btnHover w-full max-w-md text-white rounded-lg px-8 lg:w-[12rem] py-2 transition"
+            className="bg-cyan hover:bg-btnHover w-full max-w-md text-white rounded-lg px-8 lg:w-[12rem] py-2 transition flex justify-center items-center"
+            disabled={loading}
           >
-            Shorten it!
+            {loading ? (
+              <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-white"></div>
+            ) : (
+              "Shorten it!"
+            )}
           </button>
         </form>
       </div>
