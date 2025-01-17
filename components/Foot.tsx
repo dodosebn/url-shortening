@@ -1,6 +1,5 @@
 import React from 'react'
 import { firstItem, secondItem,  thirdItem, fourthItem, FooterItem,  LogoForFooter  } from "./customs";
-import Image from 'next/image';
 const Foot: React.FC = () => {
   return (
     <footer className='bg-footbg flex flex-col lg:flex-row justify-center text-center gap-6 py-[3rem]'>
@@ -23,7 +22,7 @@ const Foot: React.FC = () => {
 
         ))}
       </div>
-      <div className='mx-auto flex gap-6 pb-6'>
+      <div className='mx-auto flex gap-6 pb-6 lg:pt-4'>
         {
             fourthItem.map(item => (
                 <ul key={item.id}>

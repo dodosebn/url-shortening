@@ -12,15 +12,16 @@ const Header: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
   const navBtns: NavBtnProps = ['Login', 'Sign Up'];
 
   return (
+    <div>
     <header className="p-3 relative z-10 ">
       <nav className="flex justify-between items-center p-4">
         <div>
           <Image src={logo} alt="Logo" priority className='text-2xl' />
         </div>
 
-        <ul className="hidden lg:flex lg:pr-[13rem] space-x-8 mx-auto lg:bg-slate-50">
+        <ul className="hidden hover:text-black lg:flex lg:pr-[13rem] space-x-8 mx-auto lg:bg-slate-50">
           {navItems.map((item: string, index: number) => (
-            <li key={index} className="text-grayish-violet hover:text-black transition justify">
+            <li key={index} className=" hover:text-black transition justify">
               <a href={`#${item.toLowerCase()}`}>{item}</a>
             </li>
           ))}
@@ -30,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
           {navBtns.map((btn: string, index: number) => (
             <button
               key={index}
-              className={`py-2 px-4 rounded ${btn === 'Sign Up' ? 'bg-cyan text-white' : 'bg-transparent text-grayish-violet'} hover:bg-cyan hover:text-white transition`}
+              className={`py-2 px-4 rounded ${btn === 'Sign Up' ? 'bg-cyan rounded-3xl px-8 py-2 text-white hover:bg-btnHover' : 'text-grayish-violet'} transition`}
             >
               {btn}
             </button>
@@ -43,13 +44,13 @@ const Header: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
             onClick={() => setIsMobile(!isMobile)}
             aria-label="Toggle menu"
           >
-            <GiHamburgerMenu className={`${isMobile ? 'text-grayish-violet' : ''} text-2xl `} />
+            <GiHamburgerMenu className={`${isMobile ? 'text-gray-600' : ''} text-2xl `} />
           </button>
         </div>
       </nav>
 
       {isMobile && (
-        <aside className={`bg-DarkViolet text-white text-lg shadow-md py-24 font-semibold lg:hidden mx-auto rounded-xl flex flex-col items-center justify-center z-50 absolute top-[6rem] left-0 w-full transition-transform ${
+        <aside className={`bg-DarkViolet text-white text-lg shadow-md py-16 font-semibold lg:hidden mx-auto rounded-xl flex flex-col items-center justify-center z-50 absolute top-[6rem] left-0 w-full transition-transform ${
             isMobile ? 'translate-x-0' : 'translate-x-full'}`}>
           <ul className="space-y-4 text-center">
             {navItems.map((item: string, index: number) => (
@@ -63,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
             {navBtns.map((btn: string, index: number) => (
               <button
                 key={index}
-                className={`w-[90%] py-2 px-4 rounded ${btn === 'Sign Up' ? 'bg-cyan text-white rounded-3xl' : 'bg-transparent text-grayish-violet'} hover:bg-cyan hover:text-white transition`}
+                className={`w-[90%] py-2 px-4 rounded ${btn === 'Sign Up' ? 'bg-cyan text-white rounded-3xl' : 'bg-transparent text-grayish-violet'}`}
               >
                 {btn}
               </button>
@@ -72,6 +73,7 @@ const Header: React.FC<HeaderProps> = ({ isMobile, setIsMobile }) => {
         </aside>
       )}
     </header>
+    </div>
   );
 };
 

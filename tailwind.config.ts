@@ -17,7 +17,8 @@ export default {
         veryDarkBlue: 'hsl(255, 11%, 22%)',
         veryDarkViolet: 'hsl(260, 8%, 14%)',
         footbg: '#212121',
-        foottxt: '#686669'
+        foottxt: '#686669',
+        btnHover: '#9ae2e1'
       },
       fontFamily: {
         Poppins: ['Poppins'],
